@@ -26,7 +26,7 @@ const handler = (req, res) => {
   if (Object.values(FileType).indexOf(path.extname(requestFilePath)) > -1) {
     res.statusCode = 500;
     res.end(`500. Format ${path.extname(requestFilePath)} is not supported`);
-    return Promise.reject();
+    return undefined;
   } else {
     fileType = FileType[path.extname(requestFilePath)];
   }
